@@ -10,6 +10,10 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g" //specify the heap size for the dex process
     }
     buildTypes {
         release {
@@ -20,7 +24,15 @@ android {
 }
 
 dependencies {
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.+'
+    compile 'com.android.support:design:24.+'
+    compile 'me.relex:circleindicator:1.2.1@aar'
+    //butterknife注解框架
+    compile 'com.jakewharton:butterknife:7.0.1'
+    // 下拉刷新
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'com.google.code.gson:gson:2.7'
 }
