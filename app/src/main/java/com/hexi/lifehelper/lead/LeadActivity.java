@@ -1,7 +1,9 @@
 package com.hexi.lifehelper.lead;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,11 +38,10 @@ public class LeadActivity extends BaseActivity {
     @Override
     public void setLayout() {
         share = SharePreTools.getInstance(this);
-        if (share.getIsFirstUse()){
-            setContentView(R.layout.lead);
-            ButterKnife.bind(this);
-        }else {
-            startActivity(HomeActivity.class,R.anim.enter_alpha,R.anim.exit_alpha);
+        setContentView(R.layout.lead);
+        ButterKnife.bind(this);
+        if (!share.getIsFirstUse()) {
+            startActivity(HomeActivity.class, R.anim.enter_alpha, R.anim.exit_alpha);
             finish();
         }
 
@@ -50,15 +51,16 @@ public class LeadActivity extends BaseActivity {
     public void loadData() {
         list = new ArrayList<View>();
         img = new ImageView[3];
-        img[0] = (ImageView) inflater.inflate(R.layout.imageview, null);
-        img[1] = (ImageView) inflater.inflate(R.layout.imageview, null);
-        img[2] = (ImageView) inflater.inflate(R.layout.imageview, null);
-        img[0].setImageResource(R.mipmap.ic_launcher);
-        img[1].setImageResource(R.mipmap.ic_launcher);
-        img[2].setImageResource(R.mipmap.ic_launcher);
-        list.add(img[0]);
-        list.add(img[1]);
-        list.add(img[2]);
+        inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        ImageView iv0 = (ImageView) inflater.inflate(R.layout.imageview, null);
+        ImageView iv1 = (ImageView) inflater.inflate(R.layout.imageview, null);
+        ImageView iv2 = (ImageView) inflater.inflate(R.layout.imageview, null);
+        iv0.setImageResource(R.mipmap.ic_launcher);
+        iv1.setImageResource(R.mipmap.ic_launcher);
+        iv2.setImageResource(R.mipmap.ic_launcher);
+        list.add(iv0);
+        list.add(iv1);
+        list.add(iv2);
 
     }
 
@@ -89,8 +91,9 @@ public class LeadActivity extends BaseActivity {
                     if (!flag && (leadViewpager.getCurrentItem() == (list.size() - 1))) {
                         startActivity(HomeActivity.class, R.anim.enter_alpha, R.anim.exit_alpha);
                         share.isFirstUse();
+                        finish();
                     }
-                    finish();
+
                     flag = true;
                     break;
 
@@ -105,4 +108,10 @@ public class LeadActivity extends BaseActivity {
             }
         }
     };
+
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -1,14 +1,16 @@
 package com.hexi.lifehelper.base;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 /**
  * Created by he.xx on 2016/7/30.
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
@@ -18,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         loadData();
         setView();
     }
+
     //设置布局
     public abstract void setLayout();
 

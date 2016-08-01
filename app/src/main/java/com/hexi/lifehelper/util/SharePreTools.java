@@ -25,12 +25,12 @@ public class SharePreTools {
     public void isFirstUse(){
         SharedPreferences preferences = mC.getSharedPreferences("isFirst",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isfirst",true);
+        editor.putBoolean("isfirst",false);
         editor.commit();
     }
 
     public boolean getIsFirstUse(){
         SharedPreferences preferences = mC.getSharedPreferences("isFirst",Context.MODE_PRIVATE);
-        return preferences.getBoolean("isfirst",false);
+        return preferences.getBoolean("isfirst",true);
     }
 }
