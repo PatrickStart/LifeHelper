@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/note_ed_title"
+        android:hint="请输入主题"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/note_btn_add"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="添加"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp" />
+
+    <EditText
+        android:id="@+id/note_ed_content"
+        android:hint="这里输入内容"
+        android:layout_below="@id/note_ed_title"
+        android:layout_above="@id/note_btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

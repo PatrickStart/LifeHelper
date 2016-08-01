@@ -1,4 +1,4 @@
-package com.hexi.lifehelper.weather;
+package com.hexi.lifehelper.note;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,28 +9,26 @@ import android.widget.TextView;
 
 import com.hexi.lifehelper.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by he.xx on 2016/8/1.
  */
-public class GirdViewAdapter extends BaseAdapter {
-    List<String> list;
+public class NotesAdapter extends BaseAdapter{
+    List<NotesEntity> list;
     Context mC;
 
-    public GirdViewAdapter(Context mC) {
+    public NotesAdapter(Context mC) {
         this.mC = mC;
-        list = new ArrayList<String>();
+        list = new ArrayList<NotesEntity>();
     }
 
-    public List<String> getList() {
+    public List<NotesEntity> getList() {
         return list;
     }
 
-    public void setList(List<String> list) {
+    public void setList(List<NotesEntity> list) {
         this.list = list;
     }
 
@@ -54,18 +52,21 @@ public class GirdViewAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (convertView == null){
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(mC).inflate(R.layout.weather_item,null);
-            holder.tv = (TextView) convertView.findViewById(R.id.weather_item_tv);
+            convertView = LayoutInflater.from(mC).inflate(R.layout.note_item,null);
+            holder.tv_title = (TextView) convertView.findViewById(R.id.note_item_tv_title);
+            holder.tv_content = (TextView) convertView.findViewById(R.id.note_item_tv_content);
+            holder.tv_date = (TextView) convertView.findViewById(R.id.note_item_tv_date);
             convertView.setTag(holder);
         }else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.tv.setText(list.get(position));
-
+        holder.tv_title.setText(list.get(position).getTitle());
+        holder.tv_content.setText(list.get(position).getContent());
+        holder.tv_date.setText(list.get(position).getDate());
         return convertView;
     }
 
     class ViewHolder{
-        TextView tv;
+        TextView tv_title,tv_content,tv_date;
     }
 }

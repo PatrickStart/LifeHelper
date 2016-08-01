@@ -6,6 +6,10 @@ import android.widget.Button;
 
 import com.hexi.lifehelper.R;
 import com.hexi.lifehelper.base.BaseActivity;
+import com.hexi.lifehelper.cook.CookActivity;
+import com.hexi.lifehelper.news.NewsActivity;
+import com.hexi.lifehelper.note.NotesActivity;
+import com.hexi.lifehelper.weather.WeatherActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,11 +41,30 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void setView() {
-
+        homeCook.setOnClickListener(this);
+        homeWeather.setOnClickListener(this);
+        homeNews.setOnClickListener(this);
+        homeNote.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.home_weather:
+                startActivity(WeatherActivity.class,R.anim.enter_alpha,R.anim.exit_alpha);
+                break;
 
+            case R.id.home_cook:
+                startActivity(CookActivity.class,R.anim.enter_alpha,R.anim.exit_alpha);
+                break;
+
+            case R.id.home_news:
+                startActivity(NewsActivity.class,R.anim.enter_alpha,R.anim.exit_alpha);
+                break;
+
+            case R.id.home_note:
+                startActivity(NotesActivity.class,R.anim.enter_alpha,R.anim.exit_alpha);
+                break;
+        }
     }
 }

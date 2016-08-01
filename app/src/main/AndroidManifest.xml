@@ -10,7 +10,8 @@
         android:theme="@style/AppTheme"
         android:name="android.support.multidex.MultiDexApplication">>
        <activity android:name=".lead.LeadActivity"
-           android:screenOrientation="portrait">
+           android:screenOrientation="portrait"
+           android:launchMode="singleTask">
            <intent-filter>
                <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +20,20 @@
        </activity>
         <activity android:name=".activity.HomeActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".weather.WeatherActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".news.NewsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".note.NotesActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".cook.CookActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".note.NoteAddActivity"
+            android:screenOrientation="portrait"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
