@@ -6,4 +6,15 @@
     <string name="home_news">新闻</string>
     <string name="home_cook">厨房</string>
     <string name="home_note">便签</string>
+
+    <string name="weather_CD">成都</string>
+    <string name="weather_CQ">重庆</string>
+    <string name="weather_GY">贵阳</string>
+    <string name="weather_BJ">北京</string>
+    <string name="weather_SH">上海</string>
+    <string name="weather_AN">安顺</string>
+    <string name="weather_ZY">遵义</string>
+    <string name="weather_YN">云南</string>
+    <string name="weather_DJY">都江堰</string>
+    <string name="weather_GZ">广州</string>
 </resources>

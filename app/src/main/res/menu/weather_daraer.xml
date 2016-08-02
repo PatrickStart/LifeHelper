@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="@string/weather_CD" android:id="@+id/menu_cd"></item>
+    <item android:id="@+id/menu_cq" android:title="@string/weather_CQ"></item>
+    <item android:id="@+id/menu_gy" android:title="@string/weather_GY"></item>
+    <item android:id="@+id/menu_zy" android:title="@string/weather_ZY"></item>
+    <item android:id="@+id/menu_djy" android:title="@string/weather_DJY"></item>
+    <item android:id="@+id/menu_as" android:title="@string/weather_AN"></item>
+    <item android:id="@+id/menu_bj" android:title="@string/weather_BJ"></item>
+    <item android:id="@+id/menu_sh" android:title="@string/weather_SH"></item>
+    <item android:id="@+id/menu_gz" android:title="@string/weather_GZ"></item>
+    <item android:id="@+id/menu_yn" android:title="@string/weather_YN"></item>
+
+</menu>
